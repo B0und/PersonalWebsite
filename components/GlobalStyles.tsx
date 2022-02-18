@@ -68,15 +68,16 @@ export const GlobalStyles = createGlobalStyle`
   *:before,
   *:after {
     font-family: "Noto Sans", sans-serif;
+    background: var( --color-background);
+    color: white;
   }
 
   html {
-    --primary-blue: hsla(203, 66%, 56%);
-    --secondary-blue: hsl(204, 87%, 81%, 0.5);
     // silence the warning
     --reach-dialog: 1;
 
     --color-border: #f0f0f0;
+    --color-background : #1E213C;
   }
 `;
 

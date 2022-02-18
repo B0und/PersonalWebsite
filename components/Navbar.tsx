@@ -30,8 +30,8 @@ const Nav = styled.nav`
   justify-content: space-between;
   border-bottom: 1px solid var(--color-border);
 
-  padding-top: 32px;
-  margin-bottom: 32px;
+  padding-top: 64px;
+  margin-bottom: 64px;
 `;
 
 const List = styled.ul`
