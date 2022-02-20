@@ -18,9 +18,6 @@ const Wrapper = styled.div`
   background-size: 100% 100%;
 
   max-width: 655px;
-  height: 100%;
-  min-height: 0;
-  width: auto;
 
   display: flex;
   flex-direction: column;
@@ -32,29 +29,23 @@ const Wrapper = styled.div`
 
 const IdText = styled.p`
   text-transform: uppercase;
-  /* padding-bottom: 64px; */
   padding-left: 8%;
   padding-bottom: 8%;
 
-  /* font-size: ${14 / 16}rem; */
-  font-size: clamp(8px, calc(0.5rem + ((1vw - 3.75px) * 1.8462)), 14px);
-  min-height: 0vw;
+  font-size: clamp(0.25rem, calc(0.5rem + ((1vw - 3.75px) * 1.8462)), 0.875rem);
+  min-height: 0vw; /* safari fluid bug fix */
 
   background: inherit;
   color: var(--color-background);
 `;
 
 const Name = styled.h1`
-  /* padding-top: 32px; */
-  /* padding-left: 55px; */
-  /* padding-bottom: 64px; */
   padding-top: 7%;
   padding-left: 8%;
   padding-bottom: 8.5%;
 
-  /* font-size: ${64 / 16}rem; */
-  font-size: clamp(36px, calc(2.25rem + ((1vw - 3.75px) * 8.6154)), 64px);
-  min-height: 0vw;
+  font-size: clamp(2.25rem, calc(2.25rem + ((1vw - 3.75px) * 8.6154)), 4rem);
+  min-height: 0vw; /* safari fluid bug fix */
 
   line-height: 100%;
   letter-spacing: 0.02em;
