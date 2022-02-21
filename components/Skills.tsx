@@ -39,6 +39,8 @@ const Skills = () => {
   );
 };
 const Wrapper = styled.div`
+  grid-area: skills;
+
   display: flex;
   flex-direction: column;
   max-width: fit-content;

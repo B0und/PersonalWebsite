@@ -5,5 +5,9 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.format": true
-  }
+  },
+  "[svg]": {
+    "editor.defaultFormatter": "jock.svg"
+  },
+  "svg.preview.background": "white"
 }

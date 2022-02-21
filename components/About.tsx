@@ -18,10 +18,11 @@ const Header = styled.h2`
   font-size: ${48 / 16}rem;
   text-transform: uppercase;
   width: fit-content;
+  padding-bottom: 20px;
 `;
 
 const Text = styled.p`
-  max-width: 45ch;
+  /* max-width: 50ch; */
 
   border-left: 2px solid var(--color-primary-red);
   padding-left: 16px;

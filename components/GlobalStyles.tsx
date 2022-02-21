@@ -76,8 +76,11 @@ export const GlobalStyles = createGlobalStyle`
     // silence the warning
     --reach-dialog: 1;
 
-    --color-border: #f0f0f0;
+    --color-border: #919191;
     --color-background : #1E213C;
+    --color-primary-red: #F5656D;
+    --color-primary-green: #1ED09D;
+
   }
 `;
 

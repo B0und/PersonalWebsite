@@ -2,22 +2,26 @@ import * as React from "react";
 import styled from "styled-components";
 
 const WrapperBorder: React.FC = ({ children }) => {
-  return <Wrapper>{children}</Wrapper>;
+  return <BorderWrapper>{children}</BorderWrapper>;
 };
 
-const Wrapper = styled.div`
+export const BorderWrapper = styled.div`
   position: relative;
 
   border: 1px solid var(--color-border);
 
+  /* min-width: 0; */
   height: fit-content;
   display: flex;
   flex-direction: column;
 
-  padding: 36px;
-  margin-top: 36px;
+  --wrapper-padding: 64px;
+  padding: var(--wrapper-padding);
+  padding-top: calc(var(--wrapper-padding) - 12px);
+  padding-bottom: calc(var(--wrapper-padding) - 12px);
 
-  max-width: 655px;
+  /* max-width: 655px; */
+  /* height: fit-content; */
 
   &:before {
     --square-size: 75px;
