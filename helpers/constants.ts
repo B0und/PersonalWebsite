@@ -5,7 +5,7 @@ export const WEIGHTS = {
 };
 
 export const BREAKPOINTS = {
-  phone: 600,
+  phone: 742,
   tablet: 1063,
   laptop: 1300,
 };

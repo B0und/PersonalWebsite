@@ -13,7 +13,7 @@ const Skills = () => {
         <Title>tech</Title>
         <SubHeaderWrapper>
           <GraySubHeader>data</GraySubHeader>
-          <SubHeader>programming languages</SubHeader>
+          <SubHeader as="h3">programming languages</SubHeader>
         </SubHeaderWrapper>
       </HeadingWrapper>
 
@@ -34,7 +34,7 @@ const Skills = () => {
         <Border />
         <Border />
 
-        <SubHeader>Libraries & frameworks</SubHeader>
+        <SubHeader as="h3">Libraries & frameworks</SubHeader>
         <SkillGrid>
           {libraries.map((library) => (
             <Item key={library}>{library}</Item>
@@ -44,11 +44,12 @@ const Skills = () => {
     </Wrapper>
   );
 };
-const Wrapper = styled.div`
+const Wrapper = styled.section`
   --subLineWidth: 120px;
+
   display: flex;
   flex-direction: column;
-  /* max-width: fit-content; */
+  align-items: flex-start;
 
   padding-left: 8%;
 
@@ -61,36 +62,53 @@ const HeadingWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: flex-start;
+  gap: 4rem;
+
+  width: 100%;
+  padding-right: 1rem;
 
   @media ${QUERIES.tabletAndSmaller} {
+    padding-right: 0rem;
     align-items: baseline;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+
+    padding-right: 0;
   }
 `;
 
 const Title = styled.h2`
-  /* font-size: ${48 / 16}rem; */
-
   font-size: clamp(24px, calc(1.5rem + (48 - 24) * ((100vw - 700px) / (1062 - 700))), 48px);
-  min-height: 0vw;
+  min-height: 0vw; /* safari fix */
 
-  color: var(--color-primary-green);
+  color: var(--color-primary);
   text-transform: uppercase;
 `;
 
 const SubHeader = styled.p`
-  /* font-size: ${16 / 16}rem; */
   font-size: clamp(12px, calc(0.75rem + (16 - 12) * ((100vw - 700px) / (1062 - 700))), 16px);
   min-height: 0vw;
 
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  color: var(--color-primary-red);
+  color: var(--color-secondary);
   font-weight: 500;
   white-space: nowrap;
 
   @media ${QUERIES.tabletAndSmaller} {
+    text-align: right;
     padding-left: 0px;
     --subLineWidth: 60px;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    text-align: right;
+    margin-left: auto;
   }
 `;
 
@@ -108,18 +126,25 @@ const GraySubHeader = styled.p`
 `;
 
 const SubHeaderWrapper = styled.div`
-  margin-left: 64px;
+  margin-left: auto;
 
   @media ${QUERIES.tabletAndSmaller} {
-    margin-left: auto;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    margin-left: 0;
   }
 `;
 
 const Content = styled.div`
-  margin-left: 187px;
+  align-self: flex-end;
 
   @media ${QUERIES.tabletAndSmaller} {
     margin-left: 0;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    width: 100%;
   }
 `;
 const SkillGrid = styled.div`

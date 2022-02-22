@@ -22,9 +22,16 @@ const Home: NextPage = () => {
       <Layout>
         <DesktopHeroLayout />
         <PhoneHeroLayout />
+        <Projects>Projects</Projects>
       </Layout>
     </MaxWidthWrapper>
   );
 };
+
+const Projects = styled.h2`
+  text-align: center;
+  padding-top: 64px;
+  padding-bottom: 64px;
+`;
 
 export default Home;

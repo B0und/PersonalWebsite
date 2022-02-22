@@ -9,18 +9,20 @@ const Navbar: React.FC = () => {
     { title: "resume", href: "#" },
   ];
   return (
-    <Nav>
-      <h2>unbound project</h2>
-      <List>
-        {links.map((link) => {
-          return (
-            <li key={link.title}>
-              <a href={link.href}>{link.title}</a>
-            </li>
-          );
-        })}
-      </List>
-    </Nav>
+    <header>
+      <Nav>
+        <h2>unbound project</h2>
+        <List>
+          {links.map((link) => {
+            return (
+              <li key={link.title}>
+                <a href={link.href}>{link.title}</a>
+              </li>
+            );
+          })}
+        </List>
+      </Nav>
+    </header>
   );
 };
 

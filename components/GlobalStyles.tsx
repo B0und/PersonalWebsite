@@ -76,10 +76,14 @@ export const GlobalStyles = createGlobalStyle`
     // silence the warning
     --reach-dialog: 1;
 
+    --color-primary: var(--color-blue);
+    --color-secondary: var(--color-red);
     --color-border: #919191;
     --color-background : #1E213C;
-    --color-primary-red: #F5656D;
-    --color-primary-green: #1ED09D;
+    --color-red: #F5656D;
+    --color-green: #11ebad;
+    --color-blue: #33BBD0;
+
 
   }
 `;
