@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { QUERIES } from "../helpers/constants";
 import { BorderWrapper } from "./WrapperBorder";
 
 const NameCard = () => {
@@ -14,11 +15,14 @@ const NameCard = () => {
 };
 
 const CustomWrapper = styled(BorderWrapper)`
-  grid-area: name-card;
-  /* align-self: start; */
+  white-space: nowrap;
 
   background: var(--color-primary-green);
   padding-left: 53px;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    padding-left: 28px;
+  }
 `;
 
 const IdText = styled.p`

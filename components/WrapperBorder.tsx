@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import { QUERIES } from "../helpers/constants";
 
 const WrapperBorder: React.FC = ({ children }) => {
   return <BorderWrapper>{children}</BorderWrapper>;
@@ -7,25 +8,29 @@ const WrapperBorder: React.FC = ({ children }) => {
 
 export const BorderWrapper = styled.div`
   position: relative;
-
   border: 1px solid var(--color-border);
 
-  /* min-width: 0; */
   height: fit-content;
   display: flex;
   flex-direction: column;
 
   --wrapper-padding: 64px;
+  --square-size: 75px;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    --wrapper-padding: 48px;
+    --square-size: 40px;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    --wrapper-padding: 24px;
+  }
+
   padding: var(--wrapper-padding);
   padding-top: calc(var(--wrapper-padding) - 12px);
   padding-bottom: calc(var(--wrapper-padding) - 12px);
 
-  /* max-width: 655px; */
-  /* height: fit-content; */
-
   &:before {
-    --square-size: 75px;
-
     content: "";
     position: absolute;
 
@@ -41,8 +46,6 @@ export const BorderWrapper = styled.div`
   }
 
   &:after {
-    --square-size: 75px;
-
     content: "";
     position: absolute;
 

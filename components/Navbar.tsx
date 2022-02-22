@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import { QUERIES } from "../helpers/constants";
 
 const Navbar: React.FC = () => {
   const links = [
@@ -32,10 +33,14 @@ const Nav = styled.nav`
 
   padding-top: 64px;
   margin-bottom: 64px;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    padding-top: 32px;
+    margin-bottom: 32px;
+  }
 `;
 
 const List = styled.ul`
-  /* list-style-type: none; */
   list-style: none;
   display: flex;
   gap: 16px;

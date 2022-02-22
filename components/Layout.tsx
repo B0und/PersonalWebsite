@@ -12,7 +12,8 @@ const Layout: React.FC = ({ children }) => {
   );
 };
 const StyledMain = styled.main`
-  /* height: 100%; */
+  // due to rotated squares shenanigans
+  overflow: hidden;
 `;
 
 export default Layout;

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { QUERIES } from "../helpers/constants";
 import Separator from "./Separator";
 
 const languages = ["Javascript", "HTML", "Typescript", "CSS", "Python"];
@@ -16,7 +17,12 @@ const Skills = () => {
         </SubHeaderWrapper>
       </HeadingWrapper>
 
-      <Separator color="#ebebeb" subLineWidth="120px" subLineHeight="3px" lineSide="left" />
+      <Separator
+        color="#ebebeb"
+        subLineWidth="var(--subLineWidth)"
+        subLineHeight="3px"
+        lineSide="left"
+      />
 
       <Content>
         <SkillGrid>
@@ -39,31 +45,53 @@ const Skills = () => {
   );
 };
 const Wrapper = styled.div`
-  grid-area: skills;
-
+  --subLineWidth: 120px;
   display: flex;
   flex-direction: column;
-  max-width: fit-content;
+  /* max-width: fit-content; */
+
   padding-left: 8%;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    padding-left: 0px;
+    --subLineWidth: 60px;
+  }
 `;
 const HeadingWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    align-items: baseline;
+  }
 `;
 
 const Title = styled.h2`
-  font-size: ${48 / 16}rem;
+  /* font-size: ${48 / 16}rem; */
+
+  font-size: clamp(24px, calc(1.5rem + (48 - 24) * ((100vw - 700px) / (1062 - 700))), 48px);
+  min-height: 0vw;
+
   color: var(--color-primary-green);
   text-transform: uppercase;
 `;
 
 const SubHeader = styled.p`
-  font-size: ${16 / 16}rem;
+  /* font-size: ${16 / 16}rem; */
+  font-size: clamp(12px, calc(0.75rem + (16 - 12) * ((100vw - 700px) / (1062 - 700))), 16px);
+  min-height: 0vw;
+
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--color-primary-red);
   font-weight: 500;
+  white-space: nowrap;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    padding-left: 0px;
+    --subLineWidth: 60px;
+  }
 `;
 
 const GraySubHeader = styled.p`
@@ -73,14 +101,26 @@ const GraySubHeader = styled.p`
   font-weight: 500;
 
   color: var(--color-border);
+
+  @media ${QUERIES.tabletAndSmaller} {
+    display: none;
+  }
 `;
 
 const SubHeaderWrapper = styled.div`
   margin-left: 64px;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    margin-left: auto;
+  }
 `;
 
 const Content = styled.div`
   margin-left: 187px;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    margin-left: 0;
+  }
 `;
 const SkillGrid = styled.div`
   display: grid;
@@ -88,12 +128,16 @@ const SkillGrid = styled.div`
   gap: 9px;
 
   margin-top: 18px;
-  margin-bottom: 24px;
+
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
 `;
 
 const Item = styled.p`
   font-size: ${14 / 16}rem;
   font-weight: 500px;
+  white-space: nowrap;
 
   &:nth-child(even) {
     text-align: right;
