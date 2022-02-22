@@ -50,9 +50,8 @@ const IdText = styled.p`
 `;
 
 const Name = styled.h1`
-  font-size: clamp(2.25rem, calc(2.25rem + ((1vw - 3.75px) * 8.6154)), 4rem);
-  min-height: 0vw; /* safari fluid bug fix */
-
+  font-size: clamp(36px, calc(2.25rem + (64 - 36) * ((100vw - 700px) / (1062 - 700))), 64px);
+  min-height: 0vw;
   line-height: 100%;
   letter-spacing: 0.02em;
 

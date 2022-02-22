@@ -6,7 +6,7 @@ import NameCard from "./NameCard";
 import Separator from "./Separator";
 import Skills from "./Skills";
 import Stats from "./Stats";
-import WrapperBorder, { BorderWrapper } from "./WrapperBorder";
+import { BorderWrapper } from "./WrapperBorder";
 
 const DesktopHeroLayout = () => {
   return (

@@ -20,7 +20,6 @@ const Header = styled.h2`
   min-height: 0vw;
 
   text-transform: uppercase;
-  /* width: fit-content; */
   padding-bottom: 20px;
 `;
 

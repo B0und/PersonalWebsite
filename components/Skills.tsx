@@ -107,7 +107,6 @@ const SubHeader = styled.p`
   }
 
   @media ${QUERIES.phoneAndSmaller} {
-    text-align: right;
     margin-left: auto;
   }
 `;
@@ -133,6 +132,10 @@ const SubHeaderWrapper = styled.div`
 
   @media ${QUERIES.phoneAndSmaller} {
     margin-left: 0;
+  }
+
+  @media screen and (max-width: ${295 / 16}rem) {
+    white-space: normal;
   }
 `;
 
