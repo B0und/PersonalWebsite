@@ -4,7 +4,7 @@ import { QUERIES } from "../helpers/constants";
 import Separator from "./Separator";
 
 const languages = ["Javascript", "HTML", "Typescript", "CSS", "Python"];
-const libraries = ["React", "Styled components", "Next.js", "Emotion", "React-router", "...rest"];
+const libraries = ["React", "Styled components", "Next.js", "Jest", "React-router", "...rest"];
 
 const Skills = () => {
   return (
@@ -45,7 +45,7 @@ const Skills = () => {
   );
 };
 const Wrapper = styled.section`
-  --subLineWidth: 120px;
+  --subLineWidth: 135px;
 
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@ const Wrapper = styled.section`
 
   @media ${QUERIES.tabletAndSmaller} {
     padding-left: 0px;
-    --subLineWidth: 60px;
+    --subLineWidth: 65px;
   }
 `;
 const HeadingWrapper = styled.div`
@@ -64,9 +64,7 @@ const HeadingWrapper = styled.div`
   align-items: center;
   justify-content: flex-start;
   gap: 4rem;
-
   width: 100%;
-  padding-right: 1rem;
 
   @media ${QUERIES.tabletAndSmaller} {
     padding-right: 0rem;
@@ -77,14 +75,14 @@ const HeadingWrapper = styled.div`
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 0.5rem;
-
-    padding-right: 0;
   }
 `;
 
 const Title = styled.h2`
   font-size: clamp(24px, calc(1.5rem + (48 - 24) * ((100vw - 700px) / (1062 - 700))), 48px);
   min-height: 0vw; /* safari fix */
+  font-weight: 500;
+  letter-spacing: 0.035em;
 
   color: var(--color-primary);
   text-transform: uppercase;

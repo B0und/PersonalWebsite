@@ -18,6 +18,8 @@ const Header = styled.h2`
   color: var(--color-secondary);
   font-size: clamp(24px, calc(1.5rem + (48 - 24) * ((100vw - 700px) / (1062 - 700))), 48px);
   min-height: 0vw;
+  font-weight: 500;
+  letter-spacing: 0.035em;
 
   text-transform: uppercase;
   padding-bottom: 20px;

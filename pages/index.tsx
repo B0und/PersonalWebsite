@@ -8,9 +8,10 @@ import NameCard from "../components/NameCard";
 import MaxWidthWrapper from "../components/MaxWidthWrapper";
 import Separator from "../components/Separator";
 import Skills from "../components/Skills";
-import WrapperBorder from "../components/WrapperBorder";
+import CornerWrapper from "../components/CornerWrapper";
 import DesktopHeroLayout from "../components/DesktopHeroLayout";
 import PhoneHeroLayout from "../components/PhoneHeroLayout";
+import Projects from "../components/Projects";
 
 /**
  * Home: The Landing page of the web app
@@ -22,16 +23,10 @@ const Home: NextPage = () => {
       <Layout>
         <DesktopHeroLayout />
         <PhoneHeroLayout />
-        <Projects>Projects</Projects>
+        <Projects />
       </Layout>
     </MaxWidthWrapper>
   );
 };
-
-const Projects = styled.h2`
-  text-align: center;
-  padding-top: 64px;
-  padding-bottom: 64px;
-`;
 
 export default Home;

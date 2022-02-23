@@ -6,7 +6,7 @@ import NameCard from "./NameCard";
 import Separator from "./Separator";
 import Skills from "./Skills";
 import Stats from "./Stats";
-import { BorderWrapper } from "./WrapperBorder";
+import CornerWrapper from "./CornerWrapper";
 
 const DesktopHeroLayout = () => {
   return (
@@ -15,17 +15,30 @@ const DesktopHeroLayout = () => {
         <NameCard />
         <Skills />
       </NameWrapper>
-      <AboutWrapper>
-        <About />
-        <SpacedSeparator color="#ebebeb" subLineWidth="43%" subLineHeight="3px" lineSide="right" />
-        <StatsTitle>website statistics</StatsTitle>
-        <Stats />
-      </AboutWrapper>
+      <CornerWrapper
+        squareSize="var(--square-size)"
+        cutTopRightCorner={true}
+        cutBottomLeftCorner={true}
+      >
+        <PaddingDiv>
+          <About />
+          <SpacedSeparator
+            color="#ebebeb"
+            subLineWidth="45%"
+            subLineHeight="3px"
+            lineSide="right"
+          />
+          <StatsTitle>website statistics</StatsTitle>
+          <Stats />
+        </PaddingDiv>
+      </CornerWrapper>
     </HeroWrapper>
   );
 };
 
 const HeroWrapper = styled.div`
+  --square-size: 75px;
+
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: 1fr;
@@ -57,9 +70,14 @@ const NameWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `;
-const AboutWrapper = styled(BorderWrapper)`
-  display: flex;
-  flex-direction: column;
+
+const PaddingDiv = styled.div`
+  background: inherit;
+  padding: 52px 64px;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    padding: 36px 48px;
+  }
 `;
 
 export default DesktopHeroLayout;

@@ -67,9 +67,13 @@ export const GlobalStyles = createGlobalStyle`
   *,
   *:before,
   *:after {
-    font-family: "Noto Sans", sans-serif;
+    font-family: 'Inter', sans-serif;
     background: var( --color-background);
     color: white;
+  }
+
+  h1,h2,h3,h4,h5 {
+    font-family: 'Montserrat', sans-serif;
   }
 
   html {

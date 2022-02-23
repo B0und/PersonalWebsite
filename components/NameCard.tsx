@@ -1,40 +1,35 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { QUERIES } from "../helpers/constants";
-import { BorderWrapper } from "./WrapperBorder";
+import CornerWrapper from "./CornerWrapper";
 
 const NameCard = () => {
   return (
-    <CustomWrapper as="section">
-      <Name>
-        Vlad <br /> Moiseenko
-      </Name>
-      <IdText aria-hidden="true">id: l00k1n6f0r4fr0n73ndd3v3l0p3rj0b</IdText>
-    </CustomWrapper>
+    <Wrapper>
+      <CornerWrapper
+        as="section"
+        squareSize="var(--square-size)"
+        cutBottomLeftCorner={true}
+        cutTopRightCorner={true}
+        colorBorder="#e20000"
+        colorBackground="#d32121"
+      >
+        <PaddingDiv>
+          <Name>
+            Vlad <br /> Moiseenko
+          </Name>
+          <IdText aria-hidden="true">id: l00k1n6f0r4fr0n73ndd3v3l0p3rj0b</IdText>
+        </PaddingDiv>
+      </CornerWrapper>
+    </Wrapper>
   );
 };
 
-const CustomWrapper = styled(BorderWrapper)`
-  white-space: nowrap;
-  border: none;
-
-  background: var(--color-primary);
-  padding-left: 53px;
-
-  &:before {
-    border-bottom: 1px solid transparent;
-  }
-  &:after {
-    border-top: 1px solid transparent;
-  }
+const Wrapper = styled.div`
+  --square-size: 75px;
 
   @media ${QUERIES.tabletAndSmaller} {
-    padding-left: 28px;
-  }
-
-  @media ${QUERIES.tabletAndSmaller} {
-    padding-top: 22px;
-    padding-bottom: 22px;
+    --square-size: 40px;
   }
 `;
 
@@ -42,7 +37,7 @@ const IdText = styled.p`
   text-transform: uppercase;
   margin-top: 64px;
 
-  font-size: clamp(0.25rem, calc(0.5rem + ((1vw - 3.75px) * 1.8462)), 0.875rem);
+  font-size: clamp(4px, calc(2.25rem + (12 - 4) * ((100vw - 700px) / (1062 - 700))), 12px);
   min-height: 0vw; /* safari fluid bug fix */
 
   background: inherit;
@@ -54,8 +49,23 @@ const Name = styled.h1`
   min-height: 0vw;
   line-height: 100%;
   letter-spacing: 0.02em;
+  white-space: nowrap;
 
   background: inherit;
   color: var(--color-background);
 `;
+
+const PaddingDiv = styled.div`
+  background: inherit;
+  padding: 52px 64px;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    padding: 36px 48px;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    padding: 24px 28px;
+  }
+`;
+
 export default NameCard;
