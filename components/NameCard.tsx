@@ -11,8 +11,8 @@ const NameCard = () => {
         squareSize="var(--square-size)"
         cutBottomLeftCorner={true}
         cutTopRightCorner={true}
-        colorBorder="#e20000"
-        colorBackground="#d32121"
+        colorBorder="transparent"
+        colorBackground="var(--color-background)"
       >
         <PaddingDiv>
           <Name>
@@ -27,6 +27,7 @@ const NameCard = () => {
 
 const Wrapper = styled.div`
   --square-size: 75px;
+  --card-bg: var(--color-primary);
 
   @media ${QUERIES.tabletAndSmaller} {
     --square-size: 40px;
@@ -56,7 +57,7 @@ const Name = styled.h1`
 `;
 
 const PaddingDiv = styled.div`
-  background: inherit;
+  background: var(--color-primary);
   padding: 52px 64px;
 
   @media ${QUERIES.tabletAndSmaller} {

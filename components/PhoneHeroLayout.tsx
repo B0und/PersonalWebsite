@@ -12,6 +12,8 @@ const PhoneHeroLayout = () => {
       <NameCard />
       <CornerWrapper
         squareSize="var(--square-size)"
+        colorBorder="var(--color-border)"
+        colorBackground="var(--color-background)"
         cutTopRightCorner={true}
         cutBottomLeftCorner={true}
       >

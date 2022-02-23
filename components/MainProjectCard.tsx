@@ -8,13 +8,19 @@ const data = {
   title: "Wikipedia Speedrun Game",
   text: "The goal is simple: using links, navigate from one wiki article to another one, as fast as you can!",
   libraries: ["React", "Redux", "React-router", "Create React App", "Emotion", "Reach UI, Mantine"],
-  url: "/vercel.svg",
+  imageUrl: "/vercel.svg",
 };
 
 const MainProject = () => {
   return (
     <Wrapper>
-      <CornerWrapper as="article" cutTopLeftCorner={true}>
+      <CornerWrapper
+        as="article"
+        cutTopLeftCorner={true}
+        colorBorder="var(--color-border)"
+        colorBackground="var(--color-background)"
+        squareSize="var(--square-size)"
+      >
         <PaddingDiv>
           <RowWrapper>
             <Content>
@@ -27,11 +33,28 @@ const MainProject = () => {
                 ))}
               </LibrariesList>
             </Content>
-            <Image src={data.url} width={50} height={50} alt="" />
+            <Image src={data.imageUrl} width={50} height={50} alt="" />
           </RowWrapper>
           <ButtonWrapper>
-            <button>code</button>
-            <button>live</button>
+            <CornerWrapper
+              as="article"
+              cutBottomLeftCorner={true}
+              colorBorder="var(--color-secondary)"
+              colorBackground="var(--color-background)"
+              squareSize="20px"
+              borderWidth="2px"
+            >
+              <CodeLink>&lt;github /&gt;</CodeLink>
+            </CornerWrapper>
+            <CornerWrapper
+              as="article"
+              cutBottomRightCorner={true}
+              colorBorder="transparent"
+              colorBackground="var(--color-background)"
+              squareSize="20px"
+            >
+              <LiveLink>live &#8594;</LiveLink>
+            </CornerWrapper>
           </ButtonWrapper>
         </PaddingDiv>
       </CornerWrapper>
@@ -58,11 +81,16 @@ const RowWrapper = styled.div`
 `;
 
 const ButtonWrapper = styled.div`
+  align-self: flex-end;
+  margin-top: 35px;
   display: flex;
   flex-direction: row;
+  gap: 64px;
 `;
 
 const PaddingDiv = styled.div`
+  display: flex;
+  flex-direction: column;
   background: inherit;
   padding: 52px 64px;
 
@@ -86,6 +114,7 @@ const Title = styled.h2`
   display: inline;
   vertical-align: middle;
   color: var(--color-primary);
+  font-weight: 500;
 
   font-size: clamp(18px, calc(1.125rem + (24 - 18) * ((100vw - 700px) / (1062 - 700))), 24px);
   min-height: 0vw;
@@ -96,14 +125,13 @@ const Title = styled.h2`
     --size: 36px;
     content: "";
     display: inline-block;
-    /* vertical-align: -25%; */
+
     width: var(--size);
     height: var(--size);
     background: var(--color-primary);
     margin: auto 0;
     margin-right: 1rem;
     vertical-align: middle;
-    /* transform: translateY(-50%); */
 
     @media ${QUERIES.phoneAndSmaller} {
       --size: 16px;
@@ -122,10 +150,42 @@ const Description = styled.p`
 const SubHeading = styled.h3`
   width: fit-content;
   background-color: var(--color-primary);
-  color: black;
+  color: #0f0f0f;
   font-size: ${18 / 16}rem;
+  font-weight: 500;
   padding: 2px 15px;
   text-transform: uppercase;
   margin-bottom: 14px;
+`;
+
+const Link = styled.a`
+  cursor: pointer;
+  min-width: 132px;
+  padding: 17px 12px;
+  text-align: center;
+  font-size: ${18 / 16}rem;
+  font-weight: 500;
+`;
+
+const CodeLink = styled(Link)`
+  transition: color 0.2s ease;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background: var(--color-secondary);
+    color: black;
+  }
+`;
+
+const LiveLink = styled(Link)`
+  transition: color 0.2s ease;
+  transition: background-color 0.2s ease;
+  background: var(--color-primary);
+  color: black;
+
+  &:hover {
+    background: #000000;
+    color: var(--color-primary);
+  }
 `;
 export default MainProject;

@@ -68,8 +68,7 @@ export const GlobalStyles = createGlobalStyle`
   *:before,
   *:after {
     font-family: 'Inter', sans-serif;
-    background: var( --color-background);
-    color: white;
+   
   }
 
   h1,h2,h3,h4,h5 {
@@ -77,6 +76,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html {
+    background: var(--color-background);
+    color: #e9e9e9;
+
     // silence the warning
     --reach-dialog: 1;
 
@@ -87,8 +89,6 @@ export const GlobalStyles = createGlobalStyle`
     --color-red: #F5656D;
     --color-green: #11ebad;
     --color-blue: #33BBD0;
-
-
   }
 `;
 

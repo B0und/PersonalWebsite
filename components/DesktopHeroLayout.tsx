@@ -19,6 +19,8 @@ const DesktopHeroLayout = () => {
         squareSize="var(--square-size)"
         cutTopRightCorner={true}
         cutBottomLeftCorner={true}
+        colorBorder="var(--color-border)"
+        colorBackground="var(--color-background)"
       >
         <PaddingDiv>
           <About />

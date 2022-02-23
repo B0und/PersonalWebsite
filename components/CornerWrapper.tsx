@@ -10,74 +10,76 @@ export interface ICornerWrapperProps {
   cutBottomLeftCorner?: boolean;
   cutBottomRightCorner?: boolean;
 
-  squareSize?: string;
-  colorBorder?: string;
-  colorBackground?: string;
+  squareSize: string;
+  colorBorder: string;
+  colorBackground: string;
+  borderWidth?: string;
 
   children?: React.ReactNode;
 }
 
 const CornerWrapper: React.FC<ICornerWrapperProps> = (props) => {
   return (
-    <BorderWrapper as={props.as} style={props.styles}>
+    <BorderWrapper<any>
+      as={props.as}
+      squareSize={props.squareSize}
+      colorBorder={props.colorBorder}
+      colorBackground={props.colorBackground}
+      borderWidth={props.borderWidth}
+    >
       {props.children}
-      {props.cutTopLeftCorner && <TopLeftCorner />}
-      {props.cutTopRightCorner && <TopRightCorner />}
-      {props.cutBottomLeftCorner && <BottomLeftCorner />}
-      {props.cutBottomRightCorner && <BottomRightCorner />}
+      {props.cutTopLeftCorner && <TopLeftCorner<any> />}
+      {props.cutTopRightCorner && <TopRightCorner<any> />}
+      {props.cutBottomLeftCorner && <BottomLeftCorner<any> />}
+      {props.cutBottomRightCorner && <BottomRightCorner<any> />}
     </BorderWrapper>
   );
 };
 
-CornerWrapper.defaultProps = {
-  colorBorder: "var(--color-border)",
-  colorBackground: "var(--color-background)",
-  squareSize: "75px",
-};
-
 const BorderWrapper = styled.div<ICornerWrapperProps>`
-  --square-size: ${(p) => p.squareSize};
-  --color-border: ${(p) => p.colorBorder};
-  --color-background: ${(p) => p.colorBackground};
+  --squareSize: ${(p) => p.squareSize};
+  --border-clr: ${(p) => p.colorBorder};
+  --background-clr: ${(p) => p.colorBackground};
+  --borderWidth: ${(p) => p.borderWidth || "1px"};
 
   position: relative;
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--color-border);
+  border: var(--borderWidth) solid var(--border-clr);
 `;
 
-const Corner = styled.span`
-  --coordinates: calc(var(--square-size) / -2);
+const Corner = styled.span<ICornerWrapperProps>`
+  --coordinates: calc(var(--squareSize) / -2);
   position: absolute;
-  height: var(--square-size);
-  width: var(--square-size);
+  height: var(--squareSize);
+  width: var(--squareSize);
 
-  background-color: var(--color-background);
+  background: var(--background-clr);
   transform: rotate(45deg);
 `;
 
 const TopRightCorner = styled(Corner)`
   top: var(--coordinates);
   right: var(--coordinates);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: var(--borderWidth) solid var(--border-clr);
 `;
 
 const BottomLeftCorner = styled(Corner)`
   bottom: var(--coordinates);
   left: var(--coordinates);
-  border-top: 1px solid var(--color-border);
+  border-top: var(--borderWidth) solid var(--border-clr);
 `;
 
 const TopLeftCorner = styled(Corner)`
   top: var(--coordinates);
   left: var(--coordinates);
-  border-right: 1px solid var(--color-border);
+  border-right: var(--borderWidth) solid var(--border-clr);
 `;
 
 const BottomRightCorner = styled(Corner)`
   bottom: var(--coordinates);
   right: var(--coordinates);
-  border-left: 1px solid var(--color-border);
+  border-left: var(--borderWidth) solid var(--border-clr);
 `;
 
 export default CornerWrapper;

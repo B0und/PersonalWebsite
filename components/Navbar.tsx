@@ -48,6 +48,7 @@ const Nav = styled.nav`
 const NavTitle = styled.h2`
   font-size: ${16 / 16}rem;
   color: var(--nav-color);
+  font-weight: 500;
 `;
 
 const List = styled.ul`
