@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 import { QUERIES } from "../helpers/constants";
@@ -30,7 +29,7 @@ const ProjectCard: React.FC<IMainProjectProps> = ({ last = false, projectInfo })
 
           <ButtonWrapper>
             <CodeLink href={projectInfo.github} target="_blank">
-              github source code &#8594;
+              github source &#8594;
             </CodeLink>
 
             <LiveLink href={projectInfo.live} target="_blank">
@@ -44,21 +43,25 @@ const ProjectCard: React.FC<IMainProjectProps> = ({ last = false, projectInfo })
 };
 
 const Wrapper = styled.div`
-  min-width: 350px;
+  min-width: 400px;
   --square-size: 75px;
 
-  @media ${QUERIES.tabletAndSmaller} {
+  @media ${QUERIES.phoneAndSmaller} {
     min-width: auto;
   }
 `;
 
 const ButtonWrapper = styled.div`
-  /* align-self: ; */
-  /* justify-content: space-between; */
   margin-top: 8px;
   display: flex;
   flex-direction: row;
   gap: 32px;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    justify-content: space-between;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
 `;
 
 const PaddingDiv = styled.div`
@@ -78,16 +81,13 @@ const PaddingDiv = styled.div`
 `;
 
 const Title = styled.h2`
-  /* text-align: center; */
   display: inline;
   vertical-align: middle;
   color: var(--color-primary);
-  font-weight: 500;
+  font-weight: 600;
 
   font-size: clamp(16px, calc(1.125rem + (18 - 16) * ((100vw - 700px) / (1062 - 700))), 18px);
   min-height: 0vw;
-
-  /* margin-bottom: 16px; */
 
   &::before {
     --size: 24px;
@@ -121,12 +121,16 @@ const Link = styled.a`
   font-size: ${16 / 16}rem;
   font-weight: 500;
   padding-bottom: 2px;
+  white-space: nowrap;
+  border-bottom: 1px solid #999999;
 
-  border-bottom: 1px solid currentColor;
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: ${14 / 16}rem;
+  }
 `;
 
 const CodeLink = styled(Link)`
-  color: var(--color-secondary);
+  border-bottom: 1px solid var(--color-secondary);
 
   &:hover,
   &:focus {
@@ -145,7 +149,7 @@ const LiveLink = styled(Link)`
     transition: color 0.3s ease;
     transition: background-color 0.3s ease;
     background: var(--color-primary);
-    color: white;
+    color: black;
   }
 `;
 export default ProjectCard;

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { QUERIES } from "../helpers/constants";
 import MainProjectCard from "./MainProjectCard";
 import ProjectCard from "./ProjectCard";
 
@@ -17,11 +18,11 @@ const Projects = () => {
       <Heading>Projects</Heading>
       <Content>
         <MainProjectCard />
-        {/* <ProjectWrapper>
+        <ProjectWrapper>
           <ProjectCard projectInfo={projectInfo} />
           <ProjectCard projectInfo={projectInfo} />
           <ProjectCard projectInfo={projectInfo} />
-        </ProjectWrapper> */}
+        </ProjectWrapper>
       </Content>
     </Section>
   );
@@ -38,6 +39,14 @@ const Heading = styled.h2`
   font-size: clamp(24px, calc(1.5rem + (48 - 24) * ((100vw - 700px) / (1062 - 700))), 48px);
   min-height: 0vw;
   font-weight: 500;
+
+  @media ${QUERIES.tabletAndSmaller} {
+    padding: 64px 0px;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    padding: 32px 0px;
+  }
 `;
 
 const Section = styled.section`
@@ -45,11 +54,6 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  /* direct children */
-  & > * {
-    flex: 1;
-  }
 `;
 
 const Content = styled.div`
@@ -59,11 +63,25 @@ const Content = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 62px;
+
+  /* direct children */
+  & > * {
+    flex: 1;
+  }
+
+  @media ${QUERIES.tabletAndSmaller} {
+    gap: 16px;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    flex-direction: column;
+  }
 `;
 
 const ProjectWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 16px;
 `;
 

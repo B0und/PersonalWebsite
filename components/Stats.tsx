@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 import { QUERIES } from "../helpers/constants";
@@ -14,7 +13,7 @@ const Stats = () => {
   );
 };
 
-const StyledImage = styled(Image)`
+const StyledImage = styled.img`
   @media ${QUERIES.tabletAndSmaller} {
     transform: rotate(-90deg);
     height: auto;

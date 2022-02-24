@@ -52,11 +52,12 @@ const HeroWrapper = styled.div`
 `;
 
 const SpacedSeparator = styled(Separator)`
-  margin-top: 102px;
+  margin-top: 94px;
   margin-bottom: 24px;
 `;
 
 const StatsTitle = styled.p`
+  font-family: "Roboto Mono", monospace;
   text-align: right;
   font-size: ${16 / 16}rem;
   text-transform: uppercase;

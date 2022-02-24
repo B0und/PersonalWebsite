@@ -18,7 +18,7 @@ const NameCard = () => {
           <Name>
             Vlad <br /> Moiseenko
           </Name>
-          <IdText aria-hidden="true">id: l00k1n6f0r4fr0n73ndd3v3l0p3rj0b</IdText>
+          <IdText aria-hidden="true">id: 100k1n6f0r4fr0n73ndd3v3l0p3rj0b</IdText>
         </PaddingDiv>
       </CornerWrapper>
     </Wrapper>

@@ -88,7 +88,9 @@ export const GlobalStyles = createGlobalStyle`
     --color-background : #1E213C;
     --color-red: #F5656D;
     --color-green: #11ebad;
-    --color-blue: #33BBD0;
+    --color-blue: #2FDAF4;
+
+    
   }
 `;
 

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import styled from "styled-components";
 import { QUERIES } from "../helpers/constants";
@@ -19,6 +18,7 @@ const MainProjectCard = () => {
         style={{ height: "100%" }}
         as="article"
         cutTopLeftCorner={true}
+        cutBottomLeftCorner={true}
         colorBorder="var(--color-border)"
         colorBackground="var(--color-background)"
         squareSize="var(--square-size)"
@@ -69,10 +69,15 @@ const MainProjectCard = () => {
 };
 
 const Wrapper = styled.div`
+  min-width: 450px;
   --square-size: 75px;
 
   @media ${QUERIES.tabletAndSmaller} {
     --square-size: 40px;
+  }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    min-width: auto;
   }
 `;
 
@@ -140,7 +145,7 @@ const Title = styled.h2`
   display: inline;
   vertical-align: middle;
   color: var(--color-primary);
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
 
   font-size: clamp(18px, calc(1.125rem + (24 - 18) * ((100vw - 700px) / (1062 - 700))), 24px);
@@ -172,7 +177,7 @@ const Title = styled.h2`
 const Description = styled.p`
   font-size: clamp(14px, calc(0.875rem + (16 - 14) * ((100vw - 700px) / (1062 - 700))), 16px);
   min-height: 0vw;
-  max-width: 55ch;
+  max-width: 45ch;
 
   margin-bottom: 35px;
 `;
