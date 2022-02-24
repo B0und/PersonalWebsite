@@ -8,13 +8,15 @@ const data = {
   title: "Wikipedia Speedrun Game",
   text: "The goal is simple: using links, navigate from one wiki article to another one, as fast as you can!",
   libraries: ["React", "Redux", "React-router", "Create React App", "Emotion", "Reach UI, Mantine"],
-  imageUrl: "/vercel.svg",
+  github: "https://github.com/B0und/WikiSpeedrun",
+  live: "https://wikispeedrun.org/",
 };
 
-const MainProject = () => {
+const MainProjectCard = () => {
   return (
     <Wrapper>
       <CornerWrapper
+        style={{ height: "100%" }}
         as="article"
         cutTopLeftCorner={true}
         colorBorder="var(--color-border)"
@@ -22,40 +24,44 @@ const MainProject = () => {
         squareSize="var(--square-size)"
       >
         <PaddingDiv>
-          <RowWrapper>
-            <Content>
+          <Content>
+            <ContentSpacing>
               <Title>{data.title}</Title>
               <Description>{data.text}</Description>
+            </ContentSpacing>
+            <ContentSpacing>
               <SubHeading>tech stack</SubHeading>
               <LibrariesList>
                 {data.libraries.map((lib) => (
                   <li key={lib}>{lib}</li>
                 ))}
               </LibrariesList>
-            </Content>
-            <Image src={data.imageUrl} width={50} height={50} alt="" />
-          </RowWrapper>
-          <ButtonWrapper>
-            <CornerWrapper
-              as="article"
-              cutBottomLeftCorner={true}
-              colorBorder="var(--color-secondary)"
-              colorBackground="var(--color-background)"
-              squareSize="20px"
-              borderWidth="2px"
-            >
-              <CodeLink>&lt;github /&gt;</CodeLink>
-            </CornerWrapper>
-            <CornerWrapper
-              as="article"
-              cutBottomRightCorner={true}
-              colorBorder="transparent"
-              colorBackground="var(--color-background)"
-              squareSize="20px"
-            >
-              <LiveLink>live &#8594;</LiveLink>
-            </CornerWrapper>
-          </ButtonWrapper>
+            </ContentSpacing>
+
+            <ButtonWrapper>
+              <CornerWrapper
+                cutBottomLeftCorner={true}
+                colorBorder="var(--color-secondary)"
+                colorBackground="var(--color-background)"
+                squareSize="20px"
+                borderWidth="2px"
+              >
+                <CodeLink href={data.github} target="_blank">
+                  &lt;github /&gt;
+                </CodeLink>
+              </CornerWrapper>
+              <CornerWrapper
+                cutBottomRightCorner={true}
+                colorBorder="transparent"
+                colorBackground="var(--color-background)"
+                squareSize="20px"
+              >
+                <LiveLink href={data.live} target="_blank">
+                  live &#8594;
+                </LiveLink>
+              </CornerWrapper>
+            </ButtonWrapper>
+          </Content>
         </PaddingDiv>
       </CornerWrapper>
     </Wrapper>
@@ -73,22 +79,38 @@ const Wrapper = styled.div`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
 `;
 
-const RowWrapper = styled.div`
+const ContentSpacing = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 32px;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    gap: 16px;
+  }
 `;
 
 const ButtonWrapper = styled.div`
-  align-self: flex-end;
+  justify-content: space-between;
   margin-top: 35px;
   display: flex;
   flex-direction: row;
   gap: 64px;
+
+  /* margin-bottom: auto; */
+  @media ${QUERIES.phoneAndSmaller} {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 16px;
+  }
 `;
 
 const PaddingDiv = styled.div`
+  height: 100%;
+
   display: flex;
   flex-direction: column;
   background: inherit;
@@ -107,6 +129,10 @@ const LibrariesList = styled.ul`
   columns: 2;
   width: fit-content;
   margin-left: -22px;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: ${14 / 16}rem;
+  }
 `;
 
 const Title = styled.h2`
@@ -115,11 +141,15 @@ const Title = styled.h2`
   vertical-align: middle;
   color: var(--color-primary);
   font-weight: 500;
+  white-space: nowrap;
 
   font-size: clamp(18px, calc(1.125rem + (24 - 18) * ((100vw - 700px) / (1062 - 700))), 24px);
   min-height: 0vw;
 
-  margin-bottom: 25px;
+  @media ${QUERIES.phoneAndSmaller} {
+    white-space: normal;
+    text-align: center;
+  }
 
   &::before {
     --size: 36px;
@@ -142,7 +172,7 @@ const Title = styled.h2`
 const Description = styled.p`
   font-size: clamp(14px, calc(0.875rem + (16 - 14) * ((100vw - 700px) / (1062 - 700))), 16px);
   min-height: 0vw;
-  /* max-width: 40ch; */
+  max-width: 55ch;
 
   margin-bottom: 35px;
 `;
@@ -150,42 +180,56 @@ const Description = styled.p`
 const SubHeading = styled.h3`
   width: fit-content;
   background-color: var(--color-primary);
+  font-family: "Roboto Mono", monospace;
   color: #0f0f0f;
   font-size: ${18 / 16}rem;
   font-weight: 500;
-  padding: 2px 15px;
+  padding: 6px 15px;
   text-transform: uppercase;
-  margin-bottom: 14px;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    font-size: ${16 / 16}rem;
+  }
 `;
 
 const Link = styled.a`
+  font-family: "Roboto Mono", monospace;
+
   cursor: pointer;
   min-width: 132px;
-  padding: 17px 12px;
   text-align: center;
   font-size: ${18 / 16}rem;
   font-weight: 500;
+
+  padding: 18px 12px;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    min-width: 100px;
+    padding: 12px 8px;
+    font-size: ${14 / 16}rem;
+  }
 `;
 
 const CodeLink = styled(Link)`
-  transition: color 0.2s ease;
-  transition: background-color 0.2s ease;
-
-  &:hover {
+  &:hover,
+  &:focus {
+    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
     background: var(--color-secondary);
     color: black;
   }
 `;
 
 const LiveLink = styled(Link)`
-  transition: color 0.2s ease;
-  transition: background-color 0.2s ease;
   background: var(--color-primary);
   color: black;
 
-  &:hover {
+  &:hover,
+  &:focus {
+    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
     background: #000000;
     color: var(--color-primary);
   }
 `;
-export default MainProject;
+export default MainProjectCard;

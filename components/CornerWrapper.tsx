@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export interface ICornerWrapperProps {
   as?: string | React.ComponentType<any>;
-  styles?: object;
+  style?: object;
 
   cutTopLeftCorner?: boolean;
   cutTopRightCorner?: boolean;
@@ -21,6 +21,7 @@ export interface ICornerWrapperProps {
 const CornerWrapper: React.FC<ICornerWrapperProps> = (props) => {
   return (
     <BorderWrapper<any>
+      style={props.style}
       as={props.as}
       squareSize={props.squareSize}
       colorBorder={props.colorBorder}

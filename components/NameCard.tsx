@@ -35,6 +35,8 @@ const Wrapper = styled.div`
 `;
 
 const IdText = styled.p`
+  font-family: "Roboto Mono", monospace;
+
   text-transform: uppercase;
   margin-top: 64px;
 
