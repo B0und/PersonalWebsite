@@ -19,6 +19,7 @@ export const GlobalStyles = createGlobalStyle`
   html,
   body,
   #root {
+    scroll-behavior: smooth;
     height: 100%;
   }
 
@@ -89,6 +90,8 @@ export const GlobalStyles = createGlobalStyle`
     --color-red: #F5656D;
     --color-green: #11ebad;
     --color-blue: #2FDAF4;
+
+    --color-backdrop: #00000092
 
     
   }

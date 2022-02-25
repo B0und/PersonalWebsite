@@ -7,7 +7,7 @@ import ProjectCard from "./ProjectCard";
 
 const Projects = () => {
   return (
-    <Section>
+    <Section id="projects">
       <Heading>Projects</Heading>
       <Content>
         <MainProjectCard />
@@ -47,6 +47,7 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 64px;
 `;
 
 const Content = styled.div`

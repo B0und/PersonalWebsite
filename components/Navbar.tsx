@@ -1,13 +1,14 @@
+import VisuallyHidden from "@reach/visually-hidden";
 import * as React from "react";
 import styled from "styled-components";
 import { QUERIES, WEIGHTS } from "../helpers/constants";
+import { links } from "../helpers/data";
+import Icon from "./Icon";
+import MobileMenu from "./MobileMenu";
 
 const Navbar: React.FC = () => {
-  const links = [
-    { title: "blog", href: "#" },
-    { title: "contact", href: "#" },
-    { title: "resume", href: "#" },
-  ];
+  const [showMobileMenu, setShowMobileMenu] = React.useState(false);
+
   return (
     <header>
       <Nav>
@@ -21,7 +22,16 @@ const Navbar: React.FC = () => {
             );
           })}
         </List>
+        <Hamburger
+          onClick={() => {
+            setShowMobileMenu(true);
+          }}
+        >
+          <Icon id="menu" />
+          <VisuallyHidden>Open menu</VisuallyHidden>
+        </Hamburger>
       </Nav>
+      <MobileMenu isOpen={showMobileMenu} onDismiss={() => setShowMobileMenu(false)}></MobileMenu>
     </header>
   );
 };
@@ -55,6 +65,10 @@ const List = styled.ul`
   list-style: none;
   display: flex;
   gap: 16px;
+
+  @media ${QUERIES.phoneAndSmaller} {
+    display: none;
+  }
 `;
 
 const Link = styled.a`
@@ -79,6 +93,20 @@ const Item = styled.li`
   :last-child {
     color: var(--color-secondary);
     font-weight: ${WEIGHTS.medium};
+  }
+`;
+
+const Hamburger = styled.button`
+  display: none;
+
+  align-self: center;
+
+  border: none;
+  background: transparent;
+  color: var(--nav-color);
+
+  @media ${QUERIES.phoneAndSmaller} {
+    display: block;
   }
 `;
 export default Navbar;

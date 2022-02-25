@@ -1,3 +1,9 @@
+export const links = [
+  { title: "projects", href: "#projects" },
+  { title: "email", href: "mailto:moiseenkvs@gmail.com" },
+  { title: "resume", href: "#" },
+];
+
 export const languages = ["Javascript", "HTML", "Typescript", "CSS", "Python"];
 export const libraries = [
   "React",
@@ -18,7 +24,7 @@ export const mainProject = {
 
 export const projects = [
   {
-    title: "Nier GSAP animation",
+    title: "Nier loading animation",
     description: "Loading animation from Nier Reincarnation replicated with GSAP.",
     github: "https://github.com/B0und/nierAnimation",
     live: "https://b0und.github.io/nierAnimation/",

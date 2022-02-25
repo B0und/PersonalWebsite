@@ -15,10 +15,13 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@reach/dialog": "^0.16.2",
+    "@reach/visually-hidden": "^0.16.0",
     "@types/styled-components": "^5.1.23",
     "next": "12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-feather": "^2.0.9",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
