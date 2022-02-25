@@ -126,7 +126,6 @@ const NavLink = styled.a`
   padding: 16px;
   border-bottom: 1px solid transparent;
   font-size: ${18 / 16}rem;
-  /* text-transform: uppercase; */
 
   &:hover,
   &:focus {

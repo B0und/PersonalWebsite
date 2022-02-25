@@ -57,6 +57,7 @@ const Nav = styled.nav`
   }
 
   @media ${QUERIES.phoneAndSmaller} {
+    align-items: center;
     padding-bottom: 0px;
   }
 `;

@@ -59,7 +59,7 @@ const ButtonWrapper = styled.div`
   justify-content: space-between;
 
   @media ${QUERIES.tabletAndSmaller} {
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     gap: 16px;
     flex-wrap: wrap;
   }
