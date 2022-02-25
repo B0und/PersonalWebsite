@@ -43,7 +43,7 @@ const Skills = () => {
   );
 };
 const Wrapper = styled.section`
-  --subLineWidth: 135px;
+  --subLineWidth: 115px;
 
   display: flex;
   flex-direction: column;
@@ -77,7 +77,7 @@ const HeadingWrapper = styled.div`
 `;
 
 const Title = styled.h2`
-  font-size: clamp(24px, calc(1.5rem + (48 - 24) * ((100vw - 700px) / (1062 - 700))), 48px);
+  font-size: clamp(24px, calc(1.5rem + (40 - 24) * ((100vw - 700px) / (1062 - 700))), 40px);
   min-height: 0vw; /* safari fix */
   font-weight: 500;
   letter-spacing: 0.035em;

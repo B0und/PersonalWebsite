@@ -16,7 +16,7 @@ const About = () => {
 
 const Header = styled.h2`
   color: var(--color-secondary);
-  font-size: clamp(24px, calc(1.5rem + (48 - 24) * ((100vw - 700px) / (1062 - 700))), 48px);
+  font-size: clamp(24px, calc(1.5rem + (36 - 24) * ((100vw - 700px) / (1062 - 700))), 36px);
   min-height: 0vw;
   font-weight: 500;
   letter-spacing: 0.035em;

@@ -26,7 +26,7 @@ const DesktopHeroLayout = () => {
           <About />
           <SpacedSeparator
             color="#ebebeb"
-            subLineWidth="45%"
+            subLineWidth="47%"
             subLineHeight="3px"
             lineSide="right"
           />
@@ -62,7 +62,7 @@ const StatsTitle = styled.p`
   font-size: ${16 / 16}rem;
   text-transform: uppercase;
 
-  letter-spacing: 0.21em;
+  letter-spacing: 0.1em;
   color: var(--color-border);
   margin-bottom: 60px;
 `;
