@@ -83,7 +83,7 @@ const Content = styled(DialogContent)`
   --overfill: 16px;
   position: relative;
   background: #252950;
-  width: calc(200px + var(--overfill));
+  width: calc(250px + var(--overfill));
   height: 100%;
   margin-right: calc(var(--overfill) * -1);
   padding: 24px 32px;
@@ -124,6 +124,9 @@ const Nav = styled.nav`
 const NavLink = styled.a`
   width: 100%;
   padding: 16px;
+  border-bottom: 1px solid transparent;
+  font-size: ${18 / 16}rem;
+  /* text-transform: uppercase; */
 
   &:hover,
   &:focus {

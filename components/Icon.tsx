@@ -1,16 +1,20 @@
 import React from "react";
 
-import { X, GitHub, Menu } from "react-feather";
+import { X, GitHub, Menu, Twitter } from "react-feather";
 import styled from "styled-components";
 
 const icons = {
   close: X,
   github: GitHub,
   menu: Menu,
+  twitter: Twitter,
 };
 
-interface Props {
-  id: "close" | "github" | "menu";
+export interface IconType {
+  id: "close" | "github" | "menu" | "twitter";
+}
+
+interface Props extends IconType {
   color?: string;
   size?: number;
   strokeWidth?: number;

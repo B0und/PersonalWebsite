@@ -91,7 +91,7 @@ export const GlobalStyles = createGlobalStyle`
     --color-green: #11ebad;
     --color-blue: #2FDAF4;
 
-    --color-backdrop: #00000092
+    --color-backdrop: #00000092;
 
     
   }

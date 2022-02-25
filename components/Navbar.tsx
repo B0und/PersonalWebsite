@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { QUERIES, WEIGHTS } from "../helpers/constants";
 import { links } from "../helpers/data";
 import Icon from "./Icon";
+import IconButton from "./IconButton";
 import MobileMenu from "./MobileMenu";
 
 const Navbar: React.FC = () => {
@@ -12,7 +13,7 @@ const Navbar: React.FC = () => {
   return (
     <header>
       <Nav>
-        <NavTitle>unbound project</NavTitle>
+        <NavTitle href="/">unbound project</NavTitle>
         <List>
           {links.map((link) => {
             return (
@@ -22,13 +23,14 @@ const Navbar: React.FC = () => {
             );
           })}
         </List>
-        <Hamburger
-          onClick={() => {
-            setShowMobileMenu(true);
-          }}
-        >
-          <Icon id="menu" />
-          <VisuallyHidden>Open menu</VisuallyHidden>
+        <Hamburger>
+          <IconButton
+            onClick={() => {
+              setShowMobileMenu(true);
+            }}
+            id="menu"
+            hiddenText="Open menu"
+          />
         </Hamburger>
       </Nav>
       <MobileMenu isOpen={showMobileMenu} onDismiss={() => setShowMobileMenu(false)}></MobileMenu>
@@ -53,9 +55,13 @@ const Nav = styled.nav`
     padding-top: 32px;
     margin-bottom: 32px;
   }
+
+  @media ${QUERIES.phoneAndSmaller} {
+    padding-bottom: 0px;
+  }
 `;
 
-const NavTitle = styled.h2`
+const NavTitle = styled.a`
   font-size: ${16 / 16}rem;
   color: var(--nav-color);
   font-weight: 500;
@@ -96,13 +102,10 @@ const Item = styled.li`
   }
 `;
 
-const Hamburger = styled.button`
+const Hamburger = styled.div`
   display: none;
-
   align-self: center;
 
-  border: none;
-  background: transparent;
   color: var(--nav-color);
 
   @media ${QUERIES.phoneAndSmaller} {

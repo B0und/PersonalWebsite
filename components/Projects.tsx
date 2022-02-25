@@ -47,7 +47,7 @@ const Section = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 64px;
+  margin-bottom: 128px;
 `;
 
 const Content = styled.div`
