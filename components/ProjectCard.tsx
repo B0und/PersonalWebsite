@@ -56,10 +56,11 @@ const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
   gap: 32px;
+  justify-content: space-between;
 
   @media ${QUERIES.tabletAndSmaller} {
-    justify-content: space-between;
-    gap: 8px;
+    /* justify-content: space-between; */
+    gap: 16px;
     flex-wrap: wrap;
   }
 `;

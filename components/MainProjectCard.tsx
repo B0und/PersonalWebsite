@@ -105,7 +105,6 @@ const ButtonWrapper = styled.div`
   flex-direction: row;
   gap: 64px;
 
-  /* margin-bottom: auto; */
   @media ${QUERIES.phoneAndSmaller} {
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -141,7 +140,6 @@ const LibrariesList = styled.ul`
 `;
 
 const Title = styled.h2`
-  /* text-align: center; */
   display: inline;
   vertical-align: middle;
   color: var(--color-primary);
@@ -153,7 +151,6 @@ const Title = styled.h2`
 
   @media ${QUERIES.phoneAndSmaller} {
     white-space: normal;
-    text-align: center;
   }
 
   &::before {
