@@ -1,10 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { QUERIES } from "../helpers/constants";
+import { languages, libraries } from "../helpers/data";
 import Separator from "./Separator";
-
-const languages = ["Javascript", "HTML", "Typescript", "CSS", "Python"];
-const libraries = ["React", "Styled components", "Next.js", "Jest", "React-router", "...rest"];
 
 const Skills = () => {
   return (
@@ -12,7 +10,7 @@ const Skills = () => {
       <HeadingWrapper>
         <Title>tech</Title>
         <SubHeaderWrapper>
-          <GraySubHeader>data</GraySubHeader>
+          <GraySubHeader>markup</GraySubHeader>
           <SubHeader as="h3">programming languages</SubHeader>
         </SubHeaderWrapper>
       </HeadingWrapper>

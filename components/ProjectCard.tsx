@@ -59,7 +59,7 @@ const ButtonWrapper = styled.div`
   justify-content: space-between;
 
   @media ${QUERIES.tabletAndSmaller} {
-    /* justify-content: space-between; */
+    justify-content: flex-start;
     gap: 16px;
     flex-wrap: wrap;
   }
@@ -71,14 +71,6 @@ const PaddingDiv = styled.div`
   background: inherit;
   gap: 16px;
   padding: 20px 28px;
-
-  /* @media ${QUERIES.tabletAndSmaller} {
-    padding: 36px 48px;
-  }
-
-  @media ${QUERIES.phoneAndSmaller} {
-    padding: 24px 28px;
-  } */
 `;
 
 const Title = styled.h2`

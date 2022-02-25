@@ -1,16 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { QUERIES } from "../helpers/constants";
+import { projects } from "../helpers/data";
 import MainProjectCard from "./MainProjectCard";
 import ProjectCard from "./ProjectCard";
-
-const projectInfo = {
-  title: "Wikipedia Speedrun Game",
-  description:
-    "The goal is simple: using links, navigate from one wiki article to another one, as fast as you can!",
-  github: "https://github.com/B0und/WikiSpeedrun",
-  live: "https://wikispeedrun.org/",
-};
 
 const Projects = () => {
   return (
@@ -19,9 +12,9 @@ const Projects = () => {
       <Content>
         <MainProjectCard />
         <ProjectWrapper>
-          <ProjectCard projectInfo={projectInfo} />
-          <ProjectCard projectInfo={projectInfo} />
-          <ProjectCard projectInfo={projectInfo} />
+          {projects.map((project) => (
+            <ProjectCard key={project.title} projectInfo={project} />
+          ))}
         </ProjectWrapper>
       </Content>
     </Section>

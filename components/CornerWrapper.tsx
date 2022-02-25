@@ -38,22 +38,22 @@ const CornerWrapper: React.FC<ICornerWrapperProps> = (props) => {
 };
 
 const BorderWrapper = styled.div<ICornerWrapperProps>`
-  --squareSize: ${(p) => p.squareSize};
+  --size: ${(p) => p.squareSize};
   --border-clr: ${(p) => p.colorBorder};
   --background-clr: ${(p) => p.colorBackground};
-  --borderWidth: ${(p) => p.borderWidth || "1px"};
+  --border-width: ${(p) => p.borderWidth || "1px"};
 
   position: relative;
   display: flex;
   flex-direction: column;
-  border: var(--borderWidth) solid var(--border-clr);
+  border: var(--border-width) solid var(--border-clr);
 `;
 
 const Corner = styled.span<ICornerWrapperProps>`
-  --coordinates: calc(var(--squareSize) / -2);
+  --coordinates: calc(var(--size) / -2);
   position: absolute;
-  height: var(--squareSize);
-  width: var(--squareSize);
+  height: var(--size);
+  width: var(--size);
 
   background: var(--background-clr);
   transform: rotate(45deg);
@@ -62,25 +62,25 @@ const Corner = styled.span<ICornerWrapperProps>`
 const TopRightCorner = styled(Corner)`
   top: var(--coordinates);
   right: var(--coordinates);
-  border-bottom: var(--borderWidth) solid var(--border-clr);
+  border-bottom: var(--border-width) solid var(--border-clr);
 `;
 
 const BottomLeftCorner = styled(Corner)`
   bottom: var(--coordinates);
   left: var(--coordinates);
-  border-top: var(--borderWidth) solid var(--border-clr);
+  border-top: var(--border-width) solid var(--border-clr);
 `;
 
 const TopLeftCorner = styled(Corner)`
   top: var(--coordinates);
   left: var(--coordinates);
-  border-right: var(--borderWidth) solid var(--border-clr);
+  border-right: var(--border-width) solid var(--border-clr);
 `;
 
 const BottomRightCorner = styled(Corner)`
   bottom: var(--coordinates);
   right: var(--coordinates);
-  border-left: var(--borderWidth) solid var(--border-clr);
+  border-left: var(--border-width) solid var(--border-clr);
 `;
 
 export default CornerWrapper;

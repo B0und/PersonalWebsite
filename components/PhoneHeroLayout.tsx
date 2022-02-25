@@ -46,7 +46,6 @@ const HeroWrapper = styled.div`
 
 const AboutWrapper = styled.div`
   background: inherit;
-  /* padding: 52px 64px; */
   padding: 36px 48px;
 
   display: flex;
@@ -56,11 +55,8 @@ const AboutWrapper = styled.div`
 
   @media ${QUERIES.phoneAndSmaller} {
     padding: 24px 28px;
-
     display: flex;
     flex-direction: column;
-    /* padding-top: 19px;
-    padding-bottom: 26px; */
   }
 `;
 

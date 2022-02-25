@@ -1,15 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { QUERIES } from "../helpers/constants";
+import { mainProject } from "../helpers/data";
 import CornerWrapper from "./CornerWrapper";
-
-const data = {
-  title: "Wikipedia Speedrun Game",
-  text: "The goal is simple: using links, navigate from one wiki article to another one, as fast as you can!",
-  libraries: ["React", "Redux", "React-router", "Create React App", "Emotion", "Reach UI, Mantine"],
-  github: "https://github.com/B0und/WikiSpeedrun",
-  live: "https://wikispeedrun.org/",
-};
 
 const MainProjectCard = () => {
   return (
@@ -18,7 +11,6 @@ const MainProjectCard = () => {
         style={{ height: "100%" }}
         as="article"
         cutTopLeftCorner={true}
-        cutBottomLeftCorner={true}
         colorBorder="var(--color-border)"
         colorBackground="var(--color-background)"
         squareSize="var(--square-size)"
@@ -26,13 +18,13 @@ const MainProjectCard = () => {
         <PaddingDiv>
           <Content>
             <ContentSpacing>
-              <Title>{data.title}</Title>
-              <Description>{data.text}</Description>
+              <Title>{mainProject.title}</Title>
+              <Description>{mainProject.text}</Description>
             </ContentSpacing>
             <ContentSpacing>
               <SubHeading>tech stack</SubHeading>
               <LibrariesList>
-                {data.libraries.map((lib) => (
+                {mainProject.libraries.map((lib) => (
                   <li key={lib}>{lib}</li>
                 ))}
               </LibrariesList>
@@ -46,7 +38,7 @@ const MainProjectCard = () => {
                 squareSize="20px"
                 borderWidth="2px"
               >
-                <CodeLink href={data.github} target="_blank">
+                <CodeLink href={mainProject.github} target="_blank">
                   &lt;github /&gt;
                 </CodeLink>
               </CornerWrapper>
@@ -56,7 +48,7 @@ const MainProjectCard = () => {
                 colorBackground="var(--color-background)"
                 squareSize="20px"
               >
-                <LiveLink href={data.live} target="_blank">
+                <LiveLink href={mainProject.live} target="_blank">
                   live &#8594;
                 </LiveLink>
               </CornerWrapper>
@@ -99,11 +91,12 @@ const ContentSpacing = styled.div`
 `;
 
 const ButtonWrapper = styled.div`
-  justify-content: space-between;
-  margin-top: 35px;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   gap: 64px;
+
+  margin-top: 35px;
 
   @media ${QUERIES.phoneAndSmaller} {
     flex-wrap: wrap;
