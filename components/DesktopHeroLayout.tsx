@@ -54,7 +54,7 @@ const HeroWrapper = styled.div`
 `;
 
 const SpacedSeparator = styled(Separator)`
-  margin-top: 86px;
+  margin-top: 112px;
   margin-bottom: 24px;
 `;
 
