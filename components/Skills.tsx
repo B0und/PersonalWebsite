@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { CornerWidthAnim, FadeIn } from "../helpers/animations";
 import { QUERIES } from "../helpers/constants";
 import { languages, libraries } from "../helpers/data";
 import Separator from "./Separator";
@@ -64,6 +65,8 @@ const HeadingWrapper = styled.div`
   gap: 4rem;
   width: 100%;
 
+  animation: ${FadeIn} var(--fade-ease) var(--fade-duration) var(--fade-delay) both 1;
+
   @media ${QUERIES.tabletAndSmaller} {
     padding-right: 0rem;
     align-items: baseline;
@@ -97,6 +100,8 @@ const SubHeader = styled.p`
   color: var(--color-secondary);
   font-weight: 500;
   white-space: nowrap;
+
+  animation: ${FadeIn} var(--fade-ease) var(--fade-duration) var(--fade-delay) both 1;
 
   @media ${QUERIES.tabletAndSmaller} {
     text-align: right;
@@ -155,6 +160,8 @@ const SkillGrid = styled.div`
 
   margin-top: 18px;
 
+  animation: ${FadeIn} var(--fade-ease) var(--fade-duration) var(--fade-delay) both 1;
+
   &:not(:last-child) {
     margin-bottom: 24px;
   }
@@ -176,6 +183,8 @@ const Border = styled.span`
   height: 1px;
   border-top: 1px solid var(--color-border);
   margin: 5px 0;
+
+  animation: ${CornerWidthAnim} var(--border-ease) var(--border-duration) 0s 1 both;
 
   &:last-of-type {
     margin-bottom: 18px;

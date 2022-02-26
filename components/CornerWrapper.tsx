@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled, { keyframes } from "styled-components";
+import { CornerHeightAnim, CornerWidthAnim, SideAnim } from "../helpers/animations";
 
 export interface ICornerWrapperProps {
   as?: string | React.ComponentType<any>;
@@ -37,28 +38,6 @@ const CornerWrapper: React.FC<ICornerWrapperProps> = (props) => {
   );
 };
 
-const CornerAnim = keyframes`
-  from {
-    transform: scaleX(0);
-     /* transform: scaleY(0); */
-  }
-  to {
-    transform: scaleX(1);
-    /* transform: scaleY(1); */
-  }
-`;
-
-const SideAnim = keyframes`
-from {
-  width: 0%;
-  height: 0%;
-}
-to {
-  width: 100%;
-  height: 100%;
-}
-`;
-
 const BorderWrapper = styled.div<ICornerWrapperProps>`
   --size: ${(p) => p.squareSize};
   --border-clr: ${(p) => p.colorBorder};
@@ -79,7 +58,7 @@ const BorderWrapper = styled.div<ICornerWrapperProps>`
     width: 0px;
     height: 0px;
 
-    animation: ${SideAnim} ease-in-out 1s 0s 1 normal forwards;
+    animation: ${SideAnim} var(--border-ease) var(--border-duration) 0s 1 normal forwards;
   }
 
   &::before {
@@ -118,39 +97,48 @@ const Corner = styled.span<ICornerWrapperProps>`
     content: "";
     position: absolute;
     width: 100%;
-    height: 0px;
-    border-bottom: 1px solid var(--color-border);
-    bottom: 0px;
-    transform: scaleX(0);
-    background: var(--color-border);
-    color: var(--color-border);
-
-    animation: ${CornerAnim} ease-in-out 1s 0s 1;
+    height: 100%;
   }
 `;
 
 const TopRightCorner = styled(Corner)`
   top: var(--coordinates);
   right: var(--coordinates);
-  border-bottom: var(--border-width) solid var(--border-clr);
+
+  &:before {
+    border-bottom: var(--border-width) solid var(--border-clr);
+    animation: ${CornerWidthAnim} var(--border-ease) var(--border-duration) 0s 1 normal forwards;
+  }
 `;
 
 const BottomLeftCorner = styled(Corner)`
   bottom: var(--coordinates);
   left: var(--coordinates);
-  border-top: var(--border-width) solid var(--border-clr);
+
+  &:before {
+    border-top: var(--border-width) solid var(--border-clr);
+    animation: ${CornerWidthAnim} var(--border-ease) var(--border-duration) 0s 1 normal forwards;
+  }
 `;
 
 const TopLeftCorner = styled(Corner)`
   top: var(--coordinates);
   left: var(--coordinates);
-  border-right: var(--border-width) solid var(--border-clr);
+
+  &:before {
+    border-right: var(--border-width) solid var(--border-clr);
+    animation: ${CornerHeightAnim} var(--border-ease) var(--border-duration) 0s 1 normal forwards;
+  }
 `;
 
 const BottomRightCorner = styled(Corner)`
   bottom: var(--coordinates);
   right: var(--coordinates);
-  border-left: var(--border-width) solid var(--border-clr);
+
+  &:before {
+    border-left: var(--border-width) solid var(--border-clr);
+    animation: ${CornerHeightAnim} var(--border-ease) var(--border-duration) 0s 1 normal forwards;
+  }
 `;
 
 export default CornerWrapper;

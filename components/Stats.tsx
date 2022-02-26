@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FadeIn } from "../helpers/animations";
 import { QUERIES } from "../helpers/constants";
 
 const Stats = () => {
@@ -14,6 +15,8 @@ const Stats = () => {
 };
 
 const StyledImage = styled.img`
+  animation: ${FadeIn} var(--fade-ease) var(--fade-duration) var(--fade-delay) both 1;
+
   @media ${QUERIES.tabletAndSmaller} {
     transform: rotate(-90deg);
     height: auto;

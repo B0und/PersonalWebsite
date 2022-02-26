@@ -1,6 +1,7 @@
 import VisuallyHidden from "@reach/visually-hidden";
 import * as React from "react";
 import styled from "styled-components";
+import { CornerWidthAnim, FadeIn } from "../helpers/animations";
 import { QUERIES, WEIGHTS } from "../helpers/constants";
 import { links } from "../helpers/data";
 import Icon from "./Icon";
@@ -40,16 +41,29 @@ const Navbar: React.FC = () => {
 
 const Nav = styled.nav`
   --nav-color: #eeeeee;
-
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: baseline;
   justify-content: space-between;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--color-border);
 
   padding-top: 64px;
+  padding-bottom: 10px;
   margin-bottom: 64px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    border-bottom: 1px solid var(--color-border);
+    bottom: 0px;
+    transform: scaleX(0);
+    background: var(--color-border);
+    color: var(--color-border);
+
+    animation: ${CornerWidthAnim} var(--border-ease) var(--border-duration) 0s 1 both;
+  }
 
   @media ${QUERIES.tabletAndSmaller} {
     padding-top: 32px;
@@ -66,12 +80,22 @@ const NavTitle = styled.a`
   font-size: ${16 / 16}rem;
   color: var(--nav-color);
   font-weight: 500;
+
+  animation: ${FadeIn} var(--fade-ease) var(--fade-duration) var(--fade-delay) both 1;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-primary);
+    font-weight: 600;
+  }
 `;
 
 const List = styled.ul`
   list-style: none;
   display: flex;
   gap: 16px;
+
+  animation: ${FadeIn} var(--fade-ease) var(--fade-duration) var(--fade-delay) both 1;
 
   @media ${QUERIES.phoneAndSmaller} {
     display: none;
@@ -80,6 +104,11 @@ const List = styled.ul`
 
 const Link = styled.a`
   padding: 8px;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-primary);
+  }
 `;
 
 const Item = styled.li`
@@ -106,8 +135,9 @@ const Item = styled.li`
 const Hamburger = styled.div`
   display: none;
   align-self: center;
-
   color: var(--nav-color);
+
+  animation: ${FadeIn} var(--fade-ease) var(--fade-duration) var(--fade-delay) both 1;
 
   @media ${QUERIES.phoneAndSmaller} {
     display: block;

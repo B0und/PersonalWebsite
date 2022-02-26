@@ -7,6 +7,7 @@ import Separator from "./Separator";
 import Skills from "./Skills";
 import Stats from "./Stats";
 import CornerWrapper from "./CornerWrapper";
+import { FadeIn } from "../helpers/animations";
 
 const DesktopHeroLayout = () => {
   return (
@@ -21,6 +22,7 @@ const DesktopHeroLayout = () => {
         cutBottomLeftCorner={true}
         colorBorder="var(--color-border)"
         colorBackground="var(--color-background)"
+        borderWidth="1px"
       >
         <PaddingDiv>
           <About />
@@ -65,6 +67,8 @@ const StatsTitle = styled.p`
   letter-spacing: 0.1em;
   color: var(--color-border);
   margin-bottom: 60px;
+
+  animation: ${FadeIn} var(--fade-ease) var(--fade-duration) var(--fade-delay) both 1;
 `;
 
 const NameWrapper = styled.div`

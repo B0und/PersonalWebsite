@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import { FadeIn } from "../helpers/animations";
 import { QUERIES } from "../helpers/constants";
 
 const About = () => {
   return (
-    <section>
+    <AboutSection>
       <Header>About</Header>
       <Text>
         I`m a Frontend developer based in Moscow. Currently focused on building fascinating web
         projects, learning new things and getting employed.
       </Text>
-    </section>
+    </AboutSection>
   );
 };
 
@@ -43,5 +44,9 @@ const Text = styled.p`
   @media ${QUERIES.phoneAndSmaller} {
     max-width: max-content;
   }
+`;
+
+const AboutSection = styled.section`
+  animation: ${FadeIn} var(--fade-ease) var(--fade-duration) var(--fade-delay) both 1;
 `;
 export default About;

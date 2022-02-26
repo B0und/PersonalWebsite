@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { FadeIn } from "../helpers/animations";
 import { QUERIES } from "../helpers/constants";
 import CornerWrapper from "./CornerWrapper";
 
@@ -68,6 +69,8 @@ const PaddingDiv = styled.div`
     var(--color-blue-darker) 8px
   );
   padding: 52px 64px;
+
+  animation: ${FadeIn} var(--fade-ease) var(--fade-duration) var(--fade-delay) both 1;
 
   @media ${QUERIES.tabletAndSmaller} {
     padding: 36px 48px;

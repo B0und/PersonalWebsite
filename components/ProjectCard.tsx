@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FadeIn } from "../helpers/animations";
 import { QUERIES } from "../helpers/constants";
 import CornerWrapper from "./CornerWrapper";
 
@@ -59,7 +60,6 @@ const ButtonWrapper = styled.div`
   justify-content: space-between;
 
   @media ${QUERIES.tabletAndSmaller} {
-    /* justify-content: flex-start; */
     gap: 16px;
     flex-wrap: wrap;
   }
@@ -71,6 +71,8 @@ const PaddingDiv = styled.div`
   background: inherit;
   gap: 16px;
   padding: 20px 28px;
+
+  animation: ${FadeIn} var(--fade-ease) var(--fade-duration) var(--fade-delay) both 1;
 `;
 
 const Title = styled.h2`

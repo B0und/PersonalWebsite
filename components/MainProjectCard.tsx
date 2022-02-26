@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FadeIn } from "../helpers/animations";
 import { QUERIES } from "../helpers/constants";
 import { mainProject } from "../helpers/data";
 import CornerWrapper from "./CornerWrapper";
@@ -100,7 +101,6 @@ const ButtonWrapper = styled.div`
 
   @media ${QUERIES.phoneAndSmaller} {
     flex-wrap: wrap;
-    /* justify-content: space-evenly; */
     gap: 16px;
   }
 `;
@@ -112,6 +112,8 @@ const PaddingDiv = styled.div`
   flex-direction: column;
   background: inherit;
   padding: 52px 64px;
+
+  animation: ${FadeIn} var(--fade-ease) var(--fade-duration) var(--fade-delay) both 1;
 
   @media ${QUERIES.tabletAndSmaller} {
     padding: 36px 48px;

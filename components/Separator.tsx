@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { CornerWidthAnim } from "../helpers/animations";
 
 export interface ISeparatorProps {
   color: string;
@@ -29,15 +30,17 @@ const Separator = styled.span<ISeparatorProps>`
   height: calc(var(--border-height) + var(--main-border-height));
   width: 100%;
 
+  animation: ${CornerWidthAnim} var(--border-ease) var(--border-duration) 0s 1 both;
+
   &::before {
     content: "";
     background-color: var(--border-color);
-
     height: var(--border-height);
     width: var(--border-width);
 
-    position: absolute;
+    animation: ${CornerWidthAnim} var(--border-ease) var(--border-duration) 0s 1 both;
 
+    position: absolute;
     top: 0;
 
     ${(props) =>

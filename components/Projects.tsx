@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { FadeIn } from "../helpers/animations";
 import { QUERIES } from "../helpers/constants";
 import { projects } from "../helpers/data";
 import MainProjectCard from "./MainProjectCard";
@@ -34,6 +35,8 @@ const Heading = styled.h2`
   font-weight: 500;
 
   filter: drop-shadow(0 0 5px var(--color-secondary));
+
+  animation: ${FadeIn} var(--fade-ease) var(--fade-duration) var(--fade-delay) both 1;
 
   @media ${QUERIES.tabletAndSmaller} {
     padding: 64px 0px;

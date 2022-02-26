@@ -94,8 +94,14 @@ export const GlobalStyles = createGlobalStyle`
     --color-green: #11ebad;
     --color-blue: #2FDAF4;
     --color-blue-darker: hsl(187.92, 89.954%, 54%);
-
     --color-backdrop: #00000092;
+
+    --fade-delay: 0.8s;
+    --fade-duration: 0.5s;
+    --fade-ease: ease-in-out;
+
+    --border-duration: 1s;
+    --border-ease: ease-in-out;
 
     
   }
