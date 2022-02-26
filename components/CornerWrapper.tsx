@@ -39,6 +39,8 @@ const CornerWrapper: React.FC<ICornerWrapperProps> = (props) => {
 };
 
 const BorderWrapper = styled.div<ICornerWrapperProps>`
+  overflow: hidden;
+
   --size: ${(p) => p.squareSize};
   --border-clr: ${(p) => p.colorBorder};
   --background-clr: ${(p) => p.colorBackground};
@@ -47,8 +49,6 @@ const BorderWrapper = styled.div<ICornerWrapperProps>`
   position: relative;
   display: flex;
   flex-direction: column;
-  border: var(--border-width) solid var(--border-clr);
-  border: var(--border-width) solid transparent;
 
   &::before,
   &::after {
@@ -64,15 +64,15 @@ const BorderWrapper = styled.div<ICornerWrapperProps>`
   &::before {
     top: 0px;
     left: 0px;
-    border-top: 1px solid var(--border-clr);
-    border-left: 1px solid var(--border-clr);
+    border-top: var(--border-width) solid var(--border-clr);
+    border-left: var(--border-width) solid var(--border-clr);
   }
 
   &::after {
     right: 0px;
     bottom: 0px;
-    border-bottom: 1px solid var(--border-clr);
-    border-right: 1px solid var(--border-clr);
+    border-bottom: var(--border-width) solid var(--border-clr);
+    border-right: var(--border-width) solid var(--border-clr);
   }
 `;
 
@@ -87,8 +87,8 @@ const Corner = styled.span<ICornerWrapperProps>`
     -45deg,
     transparent,
     transparent 4px,
-    hsl(236, 33.3%, 17%) 4px,
-    hsl(236, 33.3%, 17%) 8px
+    var(--color-background-darker) 4px,
+    var(--color-background-darker) 8px
   );
   transform: rotate(45deg);
   z-index: 1;
