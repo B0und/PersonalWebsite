@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:type" content="website"></meta>
 
         {/* <!-- twitter metadata --> */}
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:creator" content="@unbound_dev" />
         <meta name="twitter:url" content="https://www.vladmoiseenko.com/" />
         <meta name="twitter:title" content="Vlad Moiseenko" />
