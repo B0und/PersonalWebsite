@@ -4,13 +4,8 @@ import { useEffect, useState } from "react";
 import GlobalStyles from "../components/GlobalStyles";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  // remove FOUC hack
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => setMounted(true), []);
-
   return (
-    <div style={{ visibility: !mounted ? "hidden" : undefined }}>
+    <>
       <Head>
         <meta charSet="utf-8" />
         <title>Vlad Moiseenko</title>
@@ -35,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <GlobalStyles />
       <Component {...pageProps} />
-    </div>
+    </>
   );
 }
 
