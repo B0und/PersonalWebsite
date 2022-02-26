@@ -84,6 +84,8 @@ const Title = styled.h2`
 
   color: var(--color-primary);
   text-transform: uppercase;
+
+  filter: drop-shadow(0 0 5px var(--color-primary));
 `;
 
 const SubHeader = styled.p`

@@ -1,5 +1,5 @@
 import * as React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 export interface ICornerWrapperProps {
   as?: string | React.ComponentType<any>;
@@ -37,6 +37,28 @@ const CornerWrapper: React.FC<ICornerWrapperProps> = (props) => {
   );
 };
 
+const CornerAnim = keyframes`
+  from {
+    transform: scaleX(0);
+     /* transform: scaleY(0); */
+  }
+  to {
+    transform: scaleX(1);
+    /* transform: scaleY(1); */
+  }
+`;
+
+const SideAnim = keyframes`
+from {
+  width: 0%;
+  height: 0%;
+}
+to {
+  width: 100%;
+  height: 100%;
+}
+`;
+
 const BorderWrapper = styled.div<ICornerWrapperProps>`
   --size: ${(p) => p.squareSize};
   --border-clr: ${(p) => p.colorBorder};
@@ -47,6 +69,32 @@ const BorderWrapper = styled.div<ICornerWrapperProps>`
   display: flex;
   flex-direction: column;
   border: var(--border-width) solid var(--border-clr);
+  border: var(--border-width) solid transparent;
+
+  &::before,
+  &::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+
+    animation: ${SideAnim} ease-in-out 1s 0s 1 normal forwards;
+  }
+
+  &::before {
+    top: 0px;
+    left: 0px;
+    border-top: 1px solid var(--border-clr);
+    border-left: 1px solid var(--border-clr);
+  }
+
+  &::after {
+    right: 0px;
+    bottom: 0px;
+    border-bottom: 1px solid var(--border-clr);
+    border-right: 1px solid var(--border-clr);
+  }
 `;
 
 const Corner = styled.span<ICornerWrapperProps>`
@@ -55,8 +103,30 @@ const Corner = styled.span<ICornerWrapperProps>`
   height: var(--size);
   width: var(--size);
 
-  background: var(--background-clr);
+  background-color: var(--color-background);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 4px,
+    hsl(236, 33.3%, 17%) 4px,
+    hsl(236, 33.3%, 17%) 8px
+  );
   transform: rotate(45deg);
+  z-index: 1;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    border-bottom: 1px solid var(--color-border);
+    bottom: 0px;
+    transform: scaleX(0);
+    background: var(--color-border);
+    color: var(--color-border);
+
+    animation: ${CornerAnim} ease-in-out 1s 0s 1;
+  }
 `;
 
 const TopRightCorner = styled(Corner)`

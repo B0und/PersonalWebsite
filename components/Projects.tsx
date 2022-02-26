@@ -33,6 +33,8 @@ const Heading = styled.h2`
   min-height: 0vw;
   font-weight: 500;
 
+  filter: drop-shadow(0 0 5px var(--color-secondary));
+
   @media ${QUERIES.tabletAndSmaller} {
     padding: 64px 0px;
   }

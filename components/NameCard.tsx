@@ -59,7 +59,14 @@ const Name = styled.h1`
 `;
 
 const PaddingDiv = styled.div`
-  background: var(--color-primary);
+  background-color: var(--color-primary);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 4px,
+    var(--color-blue-darker) 4px,
+    var(--color-blue-darker) 8px
+  );
   padding: 52px 64px;
 
   @media ${QUERIES.tabletAndSmaller} {

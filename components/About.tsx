@@ -23,6 +23,8 @@ const Header = styled.h2`
 
   text-transform: uppercase;
   padding-bottom: 20px;
+
+  filter: drop-shadow(0 0 5px var(--color-secondary));
 `;
 
 const Text = styled.p`

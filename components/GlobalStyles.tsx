@@ -77,7 +77,9 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    background: var(--color-background);
+    background-color: var(--color-background);
+    background-image: linear-gradient(transparent 50%, var(--color-background-darker) 50%);
+    background-size: 10px 10px;
     color: #e9e9e9;
 
     // silence the warning
@@ -86,10 +88,12 @@ export const GlobalStyles = createGlobalStyle`
     --color-primary: var(--color-blue);
     --color-secondary: var(--color-red);
     --color-border: #919191;
-    --color-background : #1E213C;
+    --color-background : hsl(234, 33.3%, 17.65%);
+    --color-background-darker: hsl(234, 33.3%, 17.25%);
     --color-red: #F5656D;
     --color-green: #11ebad;
     --color-blue: #2FDAF4;
+    --color-blue-darker: hsl(187.92, 89.954%, 54%);
 
     --color-backdrop: #00000092;
 
