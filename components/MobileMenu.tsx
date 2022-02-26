@@ -68,8 +68,6 @@ const Wrapper = styled(DialogOverlay)`
   background: transparent;
   display: flex;
   justify-content: flex-end;
-
-  animation: ${FadeIn} var(--fade-ease) var(--fade-duration) var(--fade-delay) both 1;
 `;
 
 const Backdrop = styled.div`
