@@ -1,6 +1,5 @@
 import * as React from "react";
 import styled from "styled-components";
-import { IconType } from "./Icon";
 import IconButton from "./IconButton";
 
 const Footer: React.FC = () => {

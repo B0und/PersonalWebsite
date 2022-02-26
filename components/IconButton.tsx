@@ -1,5 +1,5 @@
 import VisuallyHidden from "@reach/visually-hidden";
-import React, { HTMLAttributes, ReactNode } from "react";
+import React from "react";
 import styled from "styled-components";
 import Icon, { IconType } from "./Icon";
 

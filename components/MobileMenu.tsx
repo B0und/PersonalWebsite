@@ -1,12 +1,10 @@
 /* eslint-disable no-unused-vars */
-import React, { Dispatch, SetStateAction } from "react";
+import React from "react";
 import styled, { keyframes } from "styled-components";
 import { DialogOverlay, DialogContent } from "@reach/dialog";
 import VisuallyHidden from "@reach/visually-hidden";
 import Icon from "./Icon";
-import { WEIGHTS } from "../helpers/constants";
 import { links } from "../helpers/data";
-import { FadeIn } from "../helpers/animations";
 
 interface IMobileMenu {
   isOpen: boolean;

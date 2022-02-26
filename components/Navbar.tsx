@@ -1,10 +1,8 @@
-import VisuallyHidden from "@reach/visually-hidden";
 import * as React from "react";
 import styled from "styled-components";
 import { CornerWidthAnim, FadeIn } from "../helpers/animations";
 import { QUERIES, WEIGHTS } from "../helpers/constants";
 import { links } from "../helpers/data";
-import Icon from "./Icon";
 import IconButton from "./IconButton";
 import MobileMenu from "./MobileMenu";
 
