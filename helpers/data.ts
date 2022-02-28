@@ -16,7 +16,7 @@ export const libraries = [
 
 export const mainProject = {
   title: "Wikipedia Speedrun Game",
-  text: "The goal is simple: using links, navigate from one wiki article to another one, as fast as you can!",
+  text: "The goal of the game is to navigate from starting wikipedia article to some other one, in the least amount of clicks and time.",
   libraries: ["React", "Redux", "React-router", "Create React App", "Emotion", "Reach UI, Mantine"],
   github: "https://github.com/B0und/WikiSpeedrun",
   live: "https://wikispeedrun.org/",
@@ -25,7 +25,7 @@ export const mainProject = {
 export const projects = [
   {
     title: "Nier loading animation",
-    description: "Loading animation from Nier Reincarnation replicated with GSAP.",
+    description: "A loading animation from Nier Reincarnation replicated with GSAP.",
     github: "https://github.com/B0und/nierAnimation",
     live: "https://b0und.github.io/nierAnimation/",
   },
