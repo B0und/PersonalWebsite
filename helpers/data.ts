@@ -16,7 +16,7 @@ export const libraries = [
 
 export const mainProject = {
   title: "Wikipedia Speedrun Game",
-  text: "The goal of the game is to navigate from starting wikipedia article to some other one, in the least amount of clicks and time.",
+  text: "The goal of the game is to navigate from a starting wikipedia article to another one, in the least amount of clicks and time.",
   libraries: ["React", "Redux", "React-router", "Create React App", "Emotion", "Reach UI, Mantine"],
   github: "https://github.com/B0und/WikiSpeedrun",
   live: "https://wikispeedrun.org/",
