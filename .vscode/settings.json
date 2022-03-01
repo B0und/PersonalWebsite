@@ -9,5 +9,8 @@
   "[svg]": {
     "editor.defaultFormatter": "jock.svg"
   },
-  "svg.preview.background": "white"
+  "svg.preview.background": "white",
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  }
 }

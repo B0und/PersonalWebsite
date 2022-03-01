@@ -5,9 +5,10 @@ import IconButton from "./IconButton";
 const Footer: React.FC = () => {
   return (
     <Wrapper>
-      <Link href="https://github.com/B0und" target="_blank">
+      <Link href="https://github.com/B0und/PersonalWebsite" target="_blank">
         Designed and Built by Vlad Moiseenko
       </Link>
+
       <Container>
         <StyledIconButton>
           <IconButton
