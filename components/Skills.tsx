@@ -153,7 +153,11 @@ const Content = styled.div`
     width: 100%;
   }
 `;
-const SkillGrid = styled.div`
+const SkillGrid = styled.ul`
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 9px;
@@ -167,7 +171,7 @@ const SkillGrid = styled.div`
   }
 `;
 
-const Item = styled.p`
+const Item = styled.li`
   font-size: ${14 / 16}rem;
   font-weight: 500px;
   white-space: nowrap;
