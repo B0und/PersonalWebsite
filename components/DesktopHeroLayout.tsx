@@ -28,7 +28,7 @@ const DesktopHeroLayout = () => {
           <About />
           <SpacedSeparator
             color="#ebebeb"
-            subLineWidth="47%"
+            subLineWidth="40%"
             subLineHeight="3px"
             lineSide="right"
           />

@@ -84,7 +84,6 @@ const NavTitle = styled.a`
   &:hover,
   &:focus-visible {
     color: var(--color-primary);
-    font-weight: 600;
   }
 `;
 
