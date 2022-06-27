@@ -15,8 +15,8 @@ Some of the interesting problems that were solved:
 - **Design**: Figma
 
 ## Feature showcase
-![Cutting corners of a div with code](https://user-images.githubusercontent.com/20162553/175965076-b014596b-e791-453a-9df9-bb2d69901a1f.gif)
 
+![Cutting corners of a div with code](https://user-images.githubusercontent.com/20162553/175965440-7e8e9254-814b-4652-88e3-44606e168f3c.gif)
 
 
 ## Run youself locally
