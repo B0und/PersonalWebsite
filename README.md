@@ -1,6 +1,6 @@
 # Portfolio website
 
-Primary focus of this project is to showcase intresting projects that I`ve built along with css/design skills, responsiveness and css animations.
+Primary focus of this project is to showcase intresting projects that I`ve built along with css/design skills.
 Some of the interesting problems that were solved: 
 - fixing FOUC
 - optimizing the fonts and avoiding a round trip to google server.
