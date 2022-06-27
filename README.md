@@ -4,7 +4,7 @@ Primary focus of this project is to showcase intresting projects that I`ve built
 
 Some of the interesting problems that were solved: 
 - fixing FOUC
-- optimizing the fonts and avoiding a round trip to google server.
+- optimizing google fonts (avoiding a round trip to google server)
 
 
 ## Technologies
