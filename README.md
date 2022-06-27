@@ -14,6 +14,11 @@ Some of the interesting problems that were solved:
 - **Deployment**: [Vercel](https://vercel.com)
 - **Design**: Figma
 
+## Feature showcase
+![Cutting corners of a div with code](https://user-images.githubusercontent.com/20162553/175965076-b014596b-e791-453a-9df9-bb2d69901a1f.gif)
+
+
+
 ## Run youself locally
 
 ```
