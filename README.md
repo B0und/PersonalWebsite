@@ -1,12 +1,17 @@
 # Portfolio website
 
-Designed in figma. Built with next js with a plan to add a blog section later on. Primary focus of this project is to showcase css/design skills, responsive design and css animations. Also focused on optimizing the fonts and avoiding a round trip to google server. Another interesting problem I encountered was a FOUC, which was solved by changing opacity of root until the component mounts. Overall the design was quite challenging to implement and I\`ve managed to do almost everything that was planned.  
+Primary focus of this project is to showcase intresting projects that I`ve built along with css/design skills, responsiveness and css animations.
+Some of the interesting problems that were solved: 
+- fixing FOUC
+- optimizing the fonts and avoiding a round trip to google server.
+
 
 ## Technologies
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Styling**: [Styled Components](https://styled-components.com/)
 - **Deployment**: [Vercel](https://vercel.com)
+- **Design**: Figma
 
 ## Run youself locally
 
