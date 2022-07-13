@@ -1,17 +1,19 @@
 export const links = [
   { title: "projects", href: "#projects" },
   { title: "email", href: "mailto:moiseenkvs@gmail.com" },
-  { title: "resume", href: "#" },
+  { title: "resume", href: "/moiseenko_vlad_react_frontend_resume.pdf" },
 ];
 
-export const languages = ["Javascript", "HTML", "Typescript", "CSS", "Python"];
+export const languages = ["Javascript", "HTML", "Typescript", "CSS/SCSS", "Python"];
 export const libraries = [
   "React",
   "Styled components",
   "Next.js",
+  "Tailwind",
+  "Redux",
+  "Mobx",
   "Jest + RTL",
   "Playwright",
-  "...rest",
 ];
 
 export const mainProject = {
