@@ -1,10 +1,13 @@
+import Script from "next/script";
 import styled from "styled-components";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
+
 const Layout: React.FC = ({ children }) => {
   return (
     <>
+
       <Navbar />
       <StyledMain>{children}</StyledMain>
       <Footer />
